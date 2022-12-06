@@ -1,0 +1,62 @@
+/*for the whole application styling*/
+/* reusable styling*/
+/*Heights and width*/
+.h-screen{
+    height:100vh;
+}
+
+.w-400{
+    width:400px;
+}
+
+/*inputs*/
+input{
+    height:40px;
+    width:100%;
+    padding-left:20px;
+    border:2px solid gray;
+}
+
+/*cards*/
+.card{
+    border:2px solid gray;
+    box-shadow:0 0 2px solid gray;
+
+}
+
+/* text-sizes*/
+.text-2xl{
+    font-size:30px;
+}
+.text-xl{
+    font-size:25px;
+}
+.text-lg{
+    font-size:20px;
+}
+.text-md{
+    font-size:18px;
+}
+
+/* buttons*/
+.primary-btn{
+    background-color: var(--primary);
+    border:none;
+    color:white;
+    padding:10px 20px;
+    cursor: pointer;
+}
+
+.secondary-btn{
+    background-color: var(--secondary);
+    color:white;
+    cursor:pointer;
+    border:none;
+    padding: 10px 20px;
+}
+
+/* anchor tag*/
+a{
+    text-decoration: none !important;
+     color: var(--secondary) !important;
+}
