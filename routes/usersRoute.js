@@ -79,6 +79,8 @@ router.post("/login",async(req,res)=>{
 // get user by id
 //we are getting token from the frontend
 //we are sending only the token ..we dont know what is the userid.so we have to decrypt the token and we have to get the userid.
-//for sending the token middlewares-->authMiddlewares.js
+//perform find userid,the we can send user obj to frontend.
+//we have to get the userid from token
+//how to get that-for that middlewares-->authMiddlewares.js
 
 module.exports = router;
