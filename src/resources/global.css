@@ -60,3 +60,25 @@ a{
     text-decoration: none !important;
      color: var(--secondary) !important;
 }
+
+/* spinner/loader */
+.spinner-parent{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.527);
+    /* the element is always on top :z-index */
+    z-index:10000;
+
+}
+
+.spinner-border{
+    color: white !important;
+    height:50px !important;
+    width:50px !important;
+}

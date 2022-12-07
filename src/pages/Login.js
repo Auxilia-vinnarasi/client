@@ -3,15 +3,20 @@ import {Form,message} from "antd";
 //import {Button} from "antd";
 import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
+import { useDispatch } from 'react-redux';
+import { HideLoading, ShowLoading } from '../redux/alertsSlice';
 
 
 function Login() {
   const navigate=useNavigate();
-
+  const dispatch=useDispatch()
   const onFinish=async (values)=>{
     //console.log(values);
     try{
+      dispatch(ShowLoading());
       const response=await axios.post("/api/users/login",values);
+      dispatch(HideLoading());
+
       if(response.data.success){
         message.success(response.data.message);
         //we have to set the token evrytime the logged in user correct or not for that we have to store it in localstorage
@@ -24,6 +29,7 @@ function Login() {
       }
     }
     catch(error){
+      dispatch(HideLoading());
       message.error(error.message);
     }
   }
