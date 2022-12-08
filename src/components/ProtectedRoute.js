@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import { setUser } from '../redux/usersSlice';
 import {ShowLoading,HideLoading} from "../redux/alertsSlice";
+import DefaultLayout from './DefaultLayout';
 
 //we have to check if the token is present or not..
 
@@ -63,7 +64,7 @@ function ProtectedRoute({children}) {
   },[])
 
   return (
-    <div>{loading ? <div>Loading...</div>:<>{children}</>}</div>
+    <div>{!loading && <DefaultLayout>{children}</DefaultLayout>}</div>
   )
 }
 

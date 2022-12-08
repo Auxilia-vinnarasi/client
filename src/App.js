@@ -8,6 +8,9 @@ import "./resources/global.css";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Loader from "./components/Loader";
 import { useSelector } from "react-redux";
+import AdminHome from "./pages/Admin/AdminHome";
+import AdminBuses from "./pages/Admin/AdminBuses";
+import AdminUsers from "./pages/Admin/AdminUsers";
 
 function App() {
   //i want to get the loader from the reducer.whenever api req is coming i need spinner
@@ -19,6 +22,9 @@ function App() {
       <Routes>
         <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>}/>
         {/* <Route path="/" element={<PublicRoute><Home/></PublicRoute>}/> */}
+        <Route path="/admin" element={<ProtectedRoute><AdminHome/></ProtectedRoute>}/>
+        <Route path="/admin/buses" element={<ProtectedRoute><AdminBuses/></ProtectedRoute>}/>
+        <Route path="/admin/users" element={<ProtectedRoute><AdminUsers/></ProtectedRoute>}/>
         <Route path="/register" element={<PublicRoute><Register/></PublicRoute>}/>
         <Route path="/login" element={<PublicRoute><Login/></PublicRoute>}/>
        

@@ -1,0 +1,73 @@
+.layout-parent{
+    display:flex;
+    height:100%;
+    width:100%;
+    padding:15px;
+    height:100vh;
+    gap: 20px;
+}
+
+.body{
+    width:100%;
+}
+.header{
+    box-shadow:0 0 2px 0 rgba(0, 0, 0, 0.473);
+    /* i have to add login signup here ie why ive given width 80% */
+    width:75%;
+    padding:20px;
+}
+
+.sidebar{
+    /* width:300px; */
+    background-color: var(--secondary);
+    border-radius: 5px;
+    display:flex;
+    /* align-items: center; */
+    justify-content: start;
+    padding:0 20px;
+    flex-direction: column;
+}
+.role{
+    color:white;
+    font-size:15px;
+
+}
+.logo{
+    color:white;
+    margin-top:10px;
+}
+.menu{
+    margin-top:150px;
+}
+.menu-item{
+    display:flex;
+    align-items: center;
+    justify-content: start;
+    padding:5px 15px;
+    width:100%;
+    cursor: pointer;
+    transition: 0.25;
+    gap:15px;
+}
+
+.active-menu-item{
+    border:1px solid white;
+    border-radius: 5px;
+}
+
+.menu-item i{
+    font-size:20px;
+    margin-right:10px;
+    color:white;
+}
+
+.menu-item span{
+    color:white;
+    font-size: 17px;
+}
+
+
+
+.content{
+    padding:10px;
+}

@@ -61,6 +61,15 @@ a{
      color: var(--secondary) !important;
 }
 
+i{
+    font-size:20px;
+    cursor: pointer;
+}
+h1{
+    margin-bottom:0 !important;
+    padding-bottom:0 !important;
+}
+
 /* spinner/loader */
 .spinner-parent{
     position:absolute;
