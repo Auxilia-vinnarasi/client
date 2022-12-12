@@ -114,3 +114,6 @@ function DefaultLayout({ children }) {
 }
 
 export default DefaultLayout;
+
+  //  {/* <button className="secondary-btn" 
+  //         onClick={()=> navigate("/login")} type="submit">login</button> */}

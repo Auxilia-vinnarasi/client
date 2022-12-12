@@ -16,8 +16,11 @@ function ProtectedRoute({children}) {
    const dispatch=useDispatch();
    
    //instead of using const [loading,setLoading]=useState(true); i can use
-   const {loading}=useSelector((state=>state.alerts))
+//    const {loading}=useSelector((state=>state.alerts))
     //const [loading,setLoading]=useState(true);
+
+    //instead of checking loading im checking user here.
+    const {user}=useSelector(state=>state.users);
 
     //if the loading is false we are not showing the pages
     const navigate=useNavigate();
@@ -41,6 +44,7 @@ function ProtectedRoute({children}) {
                 localStorage.removeItem("token");
                 message.error(response.data.message);
                 navigate("/login");
+                //it will navigate to login page
             }
         }
         catch(err){
@@ -64,7 +68,7 @@ function ProtectedRoute({children}) {
   },[])
 
   return (
-    <div>{!loading && <DefaultLayout>{children}</DefaultLayout>}</div>
+    <div>{user && <DefaultLayout>{children}</DefaultLayout>}</div>
   )
 }
 

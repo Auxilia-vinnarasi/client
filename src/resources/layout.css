@@ -13,7 +13,7 @@
 .header{
     box-shadow:0 0 2px 0 rgba(0, 0, 0, 0.473);
     /* i have to add login signup here ie why ive given width 80% */
-    width:75%;
+    width:100%;
     padding:20px;
 }
 
