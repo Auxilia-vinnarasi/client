@@ -106,6 +106,7 @@ function DefaultLayout({ children }) {
         <div className="header">
           {collapsed ? (<i class="ri-menu-2-fill" onClick={()=>setCollapsed(!collapsed)}>
           </i>) : (<i class="ri-close-line" onClick={()=>setCollapsed(!collapsed)}></i>)}
+       
         </div>
         <div className="content">{children}</div>
       </div>
@@ -116,4 +117,5 @@ function DefaultLayout({ children }) {
 export default DefaultLayout;
 
   //  {/* <button className="secondary-btn" 
-  //         onClick={()=> navigate("/login")} type="submit">login</button> */}
+  //        onClick={()=> navigate("/login")} type="submit">login</button> */}
+

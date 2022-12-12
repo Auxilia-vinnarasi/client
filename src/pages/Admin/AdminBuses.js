@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import BusForm from '../../components/BusForm';
@@ -6,6 +7,7 @@ import { ShowLoading,HideLoading } from '../../redux/alertsSlice';
 import { axiosInstance } from "../../helpers/axiosInstance";
 import {message, Table} from "antd";
 import moment from "moment";
+
 
 function AdminBuses() {
   const dispatch=useDispatch();
@@ -79,12 +81,18 @@ function AdminBuses() {
     getBuses();
   },[])
 
+
+
+function AdminBuses() {
+  const[showBusForm,setShowBusForm]=useState(false);
+
   return (
     <div>
       <div className="d-flex justify-content-between">
         <PageTitle title="Buses"/>
         <button className='secondary-btn' onClick={()=>setShowBusForm(true)}>Add Bus</button>
       </div>
+
       <Table columns={columns} dataSource={buses} />
 
     {showBusForm && (<BusForm showBusForm={showBusForm} setShowBusForm={setShowBusForm} type=//"add"/>)}
@@ -96,10 +104,13 @@ function AdminBuses() {
     getData={getBuses} //whenever we click edit any bus we gonna udpate the table..
     
     />)}
+
+    {showBusForm && <BusForm showBusForm={showBusForm} setShowBusForm={setShowBusForm}/>}
+
     </div>
   )
 }
 
-
+}
 
 export default AdminBuses
