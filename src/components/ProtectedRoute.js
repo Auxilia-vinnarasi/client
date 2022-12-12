@@ -40,7 +40,8 @@ function ProtectedRoute({children}) {
                // setLoading(false);
                 localStorage.removeItem("token");
                 message.error(response.data.message);
-                navigate("/login");
+                navigate("/login")
+                //it will navigate to login page
             }
         }
         catch(err){
