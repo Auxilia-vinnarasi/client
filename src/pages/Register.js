@@ -1,12 +1,13 @@
 import React from 'react';
 import {Form, message} from "antd";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 //import {Button} from "antd";
 import axios from "axios";
 import { useDispatch } from 'react-redux';
 import { HideLoading, ShowLoading } from '../redux/alertsSlice';
 
 function Register() {
+  const navigate=useNavigate();
   const dispatch=useDispatch();
 
   const onFinish=async (values)=>{
@@ -18,6 +19,8 @@ function Register() {
 
       if(response.data.success){
         message.success(response.data.message);
+        //navigate to the login after registration user created succesfully message..
+        navigate("/login");
       }
       else{
         message.error(response.data.message);

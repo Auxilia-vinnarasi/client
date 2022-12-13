@@ -34,24 +34,26 @@ function BusForm({showBusForm, setShowBusForm,type="add",getData,selectedBus,set
             getData();
             setShowBusForm(false);
             setSelectedBus(null);
-
-            dispatch(HideLoading())
-
+               dispatch(HideLoading())
         }
         catch(err){
-            dispatch(HideLoading())
             message.error(err.message)
+            dispatch(HideLoading())
         }
     })
   return (
     <Modal
       width={800}
-      title="Add Bus"
-      visible={showBusForm}
-      onCancel={() => setShowBusForm(false)}
+      title={type==="add" ? "Add Bus" : "Update Bus"}
+      open={showBusForm}
+      onCancel={() => {
+        setSelectedBus(null);
+        setShowBusForm(false);
+      }
+      }
       footer={false}
     >
-      <Form layout="vertical" onFinish={onFinish}>
+      <Form layout="vertical" onFinish={onFinish} initialValues={selectedBus}>
         <Row gutter={[10, 10]}>
           <Col lg={24} xs={24}>
             <Form.Item label="Bus Name" name="name">

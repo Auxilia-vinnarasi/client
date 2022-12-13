@@ -6,7 +6,7 @@ import PageTitle from '../../components/PageTitle';
 import { ShowLoading,HideLoading } from '../../redux/alertsSlice';
 import { axiosInstance } from "../../helpers/axiosInstance";
 import {message, Table} from "antd";
-import moment from "moment";
+// import moment from "moment";
 
 
 function AdminBuses() {
@@ -32,6 +32,28 @@ function AdminBuses() {
       dispatch(HideLoading());
       message.error(error.message);  
     }
+  }
+
+  const deleteBus=async(id)=>{
+    try{
+      dispatch(ShowLoading());
+      const response = await axiosInstance.post("/api/buses/delete-bus",{_id:id,});
+      dispatch(HideLoading());
+      if(response.data.success){
+        message.success(response.data.message);
+        //after deleting fetch all the busses thats why
+        getBuses();
+      }
+      else{
+        message.error(response.data.message);
+      }
+    }
+    catch(err){
+      dispatch(HideLoading());
+      message.error(err.message);  
+    }
+
+    
   }
 
   const columns=[
@@ -65,7 +87,9 @@ function AdminBuses() {
     dataIndex:"action",
     render:(action,record)=>(
       <div className='d-flex gap-3'>
-         <i class="ri-delete-bin-line"></i>
+         <i class="ri-delete-bin-line" onClick={()=>{
+          deleteBus(record._id)
+         }}></i>
         <i class="ri-pencil-line" onClick={()=>{
           setSelectedBus(record);
           setShowBusForm(true);
@@ -82,9 +106,6 @@ function AdminBuses() {
   },[])
 
 
-
-function AdminBuses() {
-  const[showBusForm,setShowBusForm]=useState(false);
 
   return (
     <div>
@@ -105,12 +126,10 @@ function AdminBuses() {
     
     />)}
 
-    {showBusForm && <BusForm showBusForm={showBusForm} setShowBusForm={setShowBusForm}/>}
-
     </div>
   )
 }
 
-}
+
 
 export default AdminBuses
