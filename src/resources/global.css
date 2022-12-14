@@ -19,8 +19,10 @@ input{
 
 /*cards*/
 .card{
-    border:2px solid gray;
+    border:0.08em solid gray;
     box-shadow:0 0 2px solid gray;
+    border-radius: 3px !important;
+    margin:5px;
 
 }
 
@@ -36,6 +38,11 @@ input{
 }
 .text-md{
     font-size:18px;
+}
+
+.underline{
+    text-decoration:underline;
+    cursor: pointer;
 }
 
 /* buttons*/
@@ -65,7 +72,7 @@ i{
     font-size:20px;
     cursor: pointer;
 }
-h1{
+h1,p{
     margin-bottom:0 !important;
     padding-bottom:0 !important;
 }
@@ -91,3 +98,4 @@ h1{
     height:50px !important;
     width:50px !important;
 }
+
