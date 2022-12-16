@@ -1,12 +1,14 @@
 import { Col, message,Row} from 'antd';
 import React, { useEffect,useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { useParams} from 'react-router-dom';
+import SeatSelection from '../components/SeatSelection';
 import { axiosInstance } from '../helpers/axiosInstance';
 import { HideLoading, ShowLoading } from '../redux/alertsSlice';
 
 
 function BookNow() {
+  const[selectedSeats,setSelectedSeats]=useState([]);
   const params=useParams();
 
   const dispatch=useDispatch();
@@ -37,32 +39,38 @@ function BookNow() {
 
   return (
   <div>
-   {bus &&  <Row className='mt-3'>
+   {bus &&  (<Row className='mt-3' gutter={20}>
       {/* bus details */}
       <Col lg={12} xs={24} sm={24}>
         <h1 className='text-2xl text-secondary'>{bus.name}</h1>
         <h1 className='text-md'>{bus.from} - {bus.to}</h1>
         <hr/>
         <div>
-          <h1 className='text-md mt-3'>Journey Date: {bus.journeyDate}</h1>
-          <h1 className='text-md mt-2'>price: Rs.{bus.price}/-</h1>
-          <h1 className='text-md mt-2'>Departure Time: {bus.departure}</h1>
-          <h1 className='text-md mt-2'>Arrival Date: {bus.arrival}</h1>
+          <h1 className='text-md mt-3'><b>Journey Date:</b> {bus.journeyDate}</h1>
+          <h1 className='text-md mt-3'><b>price:</b> Rs.{bus.price}/-</h1>
+          <h1 className='text-md mt-3'><b>Departure Time:</b> {bus.departure}</h1>
+          <h1 className='text-md mt-3'><b>Arrival Date:</b>{bus.arrival}</h1>
           <hr/>
         </div>
         <div>
-          <h1 className='text-md'>selected seats: {}</h1>
+          <h1 className='text-md'><b>Selected Seats:</b> {}</h1>
         </div>
         <div>
           <h1 className='text-md mt-4'>Total: </h1>
         </div>
         <div>
-          <button className='btn-btn-secondary mt-3'>BookNow</button>
+          <button className='btn-btn-secondary mt-3'>Book Now</button>
         </div>
       </Col>
-      <Col lg={12} xs={24} sm={24}></Col>
+      <Col lg={12} xs={24} sm={24}>
+        <SeatSelection
+        selectedSeats={selectedSeats}
+        setSelectedSeats={setSelectedSeats}
+        bus={bus}
+        />
+      </Col>
      
-    </Row>}
+    </Row>)}
  
   </div>
   )
