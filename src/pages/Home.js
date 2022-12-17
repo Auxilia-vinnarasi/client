@@ -46,7 +46,7 @@ useEffect(()=>{
         <Row>
           {buses.map((bus)=>(
             <Col lg={12} xs={24} sm={24}>
-              {/* bus we have to pass the data */}
+              {/* bus i have to pass the data */}
               <Bus bus={bus}/>
             </Col>
           ))}

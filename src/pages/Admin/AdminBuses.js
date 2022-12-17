@@ -122,7 +122,7 @@ function AdminBuses() {
     //send the props
     selectedBus={selectedBus}
     setSelectedBus={setSelectedBus}
-    getData={getBuses} //whenever we click edit any bus we gonna udpate the table..
+    getData={getBuses} //whenever i click edit any bus i want to udpate the table..
     
     />)}
 

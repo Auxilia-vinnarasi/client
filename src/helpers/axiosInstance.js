@@ -3,7 +3,7 @@
 import axios from "axios";
 
 export const axiosInstance=axios.create({
-    //we are taking base url from the proxy..
+    //taking base url from the proxy..
     // baseURL:"http://localhost:5000/api",
     headers:{
         Authorization:`Bearer ${localStorage.getItem("token")}`

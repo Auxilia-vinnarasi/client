@@ -1,4 +1,4 @@
-//protectedRoutes:all the protected routes we have to check the token
+//protectedRoutes:all the protected routes i have to check the token
 //if the token is present only its should be navigated to it. otherwise it should be send it to the login page..
 
 import { message } from 'antd';
@@ -10,7 +10,7 @@ import { setUser } from '../redux/usersSlice';
 import {ShowLoading,HideLoading} from "../redux/alertsSlice";
 import DefaultLayout from './DefaultLayout';
 
-//we have to check if the token is present or not..
+//i have to check if the token is present or not..
 
 function ProtectedRoute({children}) {
    const dispatch=useDispatch();
@@ -22,7 +22,7 @@ function ProtectedRoute({children}) {
     //instead of checking loading im checking user here.
     const {user}=useSelector(state=>state.users);
 
-    //if the loading is false we are not showing the pages
+    //if the loading is false i am not showing the pages
     const navigate=useNavigate();
     const validateToken=async ()=>{
         //perform api call here;
@@ -48,7 +48,7 @@ function ProtectedRoute({children}) {
             }
         }
         catch(err){
-            //if it is wrong token why we have to taken it in local storage
+            //if it is wrong token i have to taken it in local storage
             dispatch(HideLoading());
             localStorage.removeItem("token");
             message.error(err.message);
