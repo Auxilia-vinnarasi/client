@@ -21,6 +21,8 @@
 .booked-seat{
     background-color: gray;
     color:white;
+    pointer-events: none;
+    cursor: disabled !important;
 }
 
 

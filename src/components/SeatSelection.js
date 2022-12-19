@@ -30,17 +30,23 @@ function SeatSelection({selectedSeats,setSelectedSeats,bus })
             //background color checking
             
             let seatClass="";
-            //empty means available..
+            //empty string means ie available..
 
             // seats starts with 1 
             if(selectedSeats.includes(seat+1))
             {
                 seatClass="selected-seat"
             }
+            else if(bus.seatsBooked.includes(seat+1)){
+                seatClass="booked-seat"
+            }
+                
+            
             return (
             <Col span={6}> 
             {/* 4 seats per 1 row 6*4=24 */}
             {/* its dynamic whether its selected or booked */}
+            {/* in this below selected seat green, normal seat white */}
                 <div className={`seat ${seatClass}`} onClick={()=>selectOrUnselectSeats(seat+1)}>
                     {/* seat+1 means seatNumber */}
                     {seat+1}

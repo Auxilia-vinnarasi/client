@@ -47,7 +47,7 @@ input{
 
 /* buttons*/
 .primary-btn{
-    background-color: var(--primary);
+    background-color: var(--primary)!important;
     border:none;
     color:white;
     padding:10px 20px;
@@ -55,11 +55,22 @@ input{
 }
 
 .secondary-btn{
-    background-color: var(--secondary);
+    background-color: var(--secondary)!important;
     color:white;
     cursor:pointer;
     border:none;
     padding: 10px 20px;
+}
+.disabled-btn{
+    background-color: gray !important;
+    border:none !important;
+    color:white;
+    padding:10px 20px;
+    cursor: not-allowed;
+    border-radius:0 !important
+}
+button{
+    border-radius: 0 !important;
 }
 
 /* anchor tag*/

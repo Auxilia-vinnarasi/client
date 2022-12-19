@@ -33,6 +33,29 @@ function BookNow() {
 
   }
 
+  const BookNow=async ()=>{
+    try{
+      dispatch(ShowLoading())
+      //bus,and seats from front end,userid and trsansaction will be attached in the backend
+      const response=await axiosInstance.post("/api/bookings/book-seat",{
+        bus:bus._id,
+        seats:selectedSeats,
+      })
+      dispatch(HideLoading());
+      if(response.data.success){
+        message.success(response.data.message);
+      }
+      else{
+        dispatch(HideLoading());
+        message.error(response.data.message);
+      }
+    }
+    catch(err){
+        console.log(err);
+        message.error(err.message);
+    }
+  }
+
   useEffect(()=>{
     getBus()
   },[])
@@ -45,21 +68,24 @@ function BookNow() {
         <h1 className='text-2xl text-secondary'>{bus.name}</h1>
         <h1 className='text-md'>{bus.from} - {bus.to}</h1>
         <hr/>
-        <div>
+        <div className='flex flex-col gap-1'>
           <h1 className='text-md mt-3'><b>Journey Date:</b> {bus.journeyDate}</h1>
           <h1 className='text-md mt-3'><b>price:</b> Rs.{bus.price}/-</h1>
           <h1 className='text-md mt-3'><b>Departure Time:</b> {bus.departure}</h1>
-          <h1 className='text-md mt-3'><b>Arrival Date:</b>{bus.arrival}</h1>
+          <h1 className='text-md mt-3'><b>Arrival Time:</b> {bus.arrival}</h1>
+          <h1 className='text-md mt-3'><b>Capacity:</b> {bus.capacity}</h1>
+          <h1 className='text-md mt-3'><b>Seats Left:</b> {bus.capacity-bus.seatsBooked.length}</h1>
           <hr/>
         </div>
-        <div>
-          <h1 className='text-md'><b>Selected Seats:</b> {}</h1>
+        <div className='flex flex-col gap-1'>
+          <h1 className='text-xl mt-3'><b>Selected Seats:</b> {selectedSeats.join(", ")}</h1>
+          <h1 className='text-xl mt-3'><b>Total price: </b> <b> Rs.{bus.price * selectedSeats.length}/-</b> </h1>
         </div>
+        <hr/>
         <div>
-          <h1 className='text-md mt-4'>Total: </h1>
-        </div>
-        <div>
-          <button className='btn-btn-secondary mt-3'>Book Now</button>
+          <button className={`'secondary-btn mt-3' ${selectedSeats.length===0 && "disabled-btn mt-3"}`}onClick={BookNow}
+          disabled={selectedSeats.length===0}
+          >Book Now</button>
         </div>
       </Col>
       <Col lg={12} xs={24} sm={24}>
