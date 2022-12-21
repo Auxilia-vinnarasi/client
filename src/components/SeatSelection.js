@@ -20,7 +20,7 @@ function SeatSelection({selectedSeats,setSelectedSeats,bus })
         
     }
   return (
-    <div>
+    <div className='mx-5'>
         <div className="bus-container">
         {/* if bus capacity is 30 im gonna loop 30 times  */}
         {/* one row has 24 column */}

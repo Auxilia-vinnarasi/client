@@ -72,12 +72,40 @@ function BusForm({showBusForm, setShowBusForm,type="add",getData,selectedBus,set
           </Col>
           <Col lg={12} xs={24}>
             <Form.Item label="From" name="from">
-              <input type="text" />
+              {/* <input type="text" /> */}
+              <select name="" id="">
+              <option value="">others</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Trichy">Trichy</option>
+                <option value="Velore">Velore</option>
+                <option value="Kovai">Kovai</option>
+                <option value="Dindigul">Dindigul</option>
+                <option value="Tirunelveli">Tirunelveli</option>
+                <option value="Thoothukudi">Thoothukudi</option>
+                <option value="kanniyakumari">kanniyakumari</option>
+                <option value="Namakkal">Namakkal</option>
+                <option value="salem">salem</option>
+              </select>
             </Form.Item>
           </Col>
           <Col lg={12} xs={24}>
             <Form.Item label="To" name="to">
-              <input type="text" />
+              {/* <input type="text" /> */}
+              <select name="" id="">
+              <option value="">others</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Trichy">Trichy</option>
+                <option value="Velore">Velore</option>
+                <option value="Kovai">Kovai</option>
+                <option value="Dindigul">Dindigul</option>
+                <option value="Tirunelveli">Tirunelveli</option>
+                <option value="Thoothukudi">Thoothukudi</option>
+                <option value="kanniyakumari">kanniyakumari</option>
+                <option value="Namakkal">Namakkal</option>
+                <option value="salem">salem</option>
+              </select>
             </Form.Item>
           </Col>
           <Col lg={8} xs={12}>
@@ -97,7 +125,15 @@ function BusForm({showBusForm, setShowBusForm,type="add",getData,selectedBus,set
           </Col>
           <Col lg={12} xs={24}>
             <Form.Item label="Type" name="type">
-              <input type="text" />
+              {/* <input type="text"/> */}
+            <select name="" id="">
+            <option value="">others</option>
+            <option value="AC sleeper">AC sleeper</option>
+            <option value="Non-AC sleeper">Non-AC sleeper</option>
+            <option value="Non-AC semi-sleeper">Non-AC semi-sleeper</option>
+            <option value="AC semi-sleeper">AC semi-sleeper</option>
+            <option value="AC volvo sleeper">AC Volvo sleeper</option>
+            </select>
             </Form.Item>
           </Col>
           <Col lg={12} xs={24}>

@@ -78,17 +78,20 @@ function AdminBuses() {
     dataIndex:"journeyDate",
     // render:(journeyDate) => moment(journeyDate).format("DD-MM-YYYY"),
    },
-   {
-    title:"Status",
-    dataIndex:"status"
-   },
+  //  {
+  //   title:"Status",
+  //   dataIndex:"status"
+  //  },
    {
     title:"Action",
     dataIndex:"action",
     render:(action,record)=>(
       <div className='d-flex gap-3'>
          <i class="ri-delete-bin-line" onClick={()=>{
-          deleteBus(record._id)
+          var result =window.confirm("Are you sure you want to delete this bus?");
+          if(result){
+            deleteBus(record._id)
+          }       
          }}></i>
         <i class="ri-pencil-line" onClick={()=>{
           setSelectedBus(record);

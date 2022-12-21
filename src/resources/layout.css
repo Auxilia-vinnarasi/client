@@ -68,4 +68,7 @@
 
 .content{
     padding:10px 0px;
+    overflow-y:scroll !important;
+    overflow-x:hidden !important;
+    height:80vh;
 }
