@@ -74,7 +74,8 @@ function BusForm({showBusForm, setShowBusForm,type="add",getData,selectedBus,set
             <Form.Item label="From" name="from">
               {/* <input type="text" /> */}
               <select name="" id="">
-              <option value="">others</option>
+  
+              <option value="others"></option>
                 <option value="Chennai">Chennai</option>
                 <option value="Madurai">Madurai</option>
                 <option value="Trichy">Trichy</option>
@@ -86,6 +87,7 @@ function BusForm({showBusForm, setShowBusForm,type="add",getData,selectedBus,set
                 <option value="kanniyakumari">kanniyakumari</option>
                 <option value="Namakkal">Namakkal</option>
                 <option value="salem">salem</option>
+                <option value="Bangalore">Bangalore</option>
               </select>
             </Form.Item>
           </Col>
@@ -93,7 +95,8 @@ function BusForm({showBusForm, setShowBusForm,type="add",getData,selectedBus,set
             <Form.Item label="To" name="to">
               {/* <input type="text" /> */}
               <select name="" id="">
-              <option value="">others</option>
+    
+              <option value="others"></option>
                 <option value="Chennai">Chennai</option>
                 <option value="Madurai">Madurai</option>
                 <option value="Trichy">Trichy</option>
@@ -127,7 +130,8 @@ function BusForm({showBusForm, setShowBusForm,type="add",getData,selectedBus,set
             <Form.Item label="Type" name="type">
               {/* <input type="text"/> */}
             <select name="" id="">
-            <option value="">others</option>
+         
+            {/* <option value="others"></option> */}
             <option value="AC sleeper">AC sleeper</option>
             <option value="Non-AC sleeper">Non-AC sleeper</option>
             <option value="Non-AC semi-sleeper">Non-AC semi-sleeper</option>
