@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-//all the pages we ll be havng the layout in top
-// in the page content we need to render the children,
+//all the pages i ll be havng the layout in top
+// in the page content i need to render the children,
 import "../resources/layout.css";
 import { useNavigate } from "react-router-dom";
 import {useSelector} from "react-redux";
 //if admin is true it is admin menu it is false it is userMenu
 
-//children-which is nothing but the pages
+//children-means which is pages 
 function DefaultLayout({ children }) {
   const navigate = useNavigate();
   const [collapsed,setCollapsed]=useState(false)
@@ -22,11 +22,11 @@ function DefaultLayout({ children }) {
     icon:"ri-file-list-line",
     path:"/bookings",
   },
-  {
-    name:"Profile",
-    icon:"ri-file-list-line",
-    path:"/profile",
-  },
+  // {
+  //   name:"Profile",
+  //   icon:"ri-file-list-line",
+  //   path:"/profile",
+  // },
   {
     name:"Logout",
     icon:"ri-logout-box-line",

@@ -19,24 +19,8 @@ const navigate=useNavigate();
 }
   },[])
 
-//   const validateToken=async ()=>{
-//     const response=await axios.post("/api/users/get-user-by-id",{},{
-//       headers:{
-//           Authorization: `Bearer ${localStorage.getItem("token")}`
-//       }
-//   })
-//     if(response.data.success){
-//       setLoading(false)
-//       dispatch(setUser(response.data.data))
-//   }
-//   else{
-//     setLoading(false);
-//     localStorage.removeItem("token");
-//     message.error(response.data.message);
-//     navigate("/login");
-// }
-//   }
 
+  
   return (
     <div>{children}</div>
   )

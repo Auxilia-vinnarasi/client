@@ -74,7 +74,7 @@ function BusForm({showBusForm, setShowBusForm,type="add",getData,selectedBus,set
             <Form.Item label="From" name="from">
               {/* <input type="text" /> */}
               <select name="" id="">
-  
+
               <option value="others"></option>
                 <option value="Chennai">Chennai</option>
                 <option value="Madurai">Madurai</option>
@@ -130,7 +130,7 @@ function BusForm({showBusForm, setShowBusForm,type="add",getData,selectedBus,set
             <Form.Item label="Type" name="type">
               {/* <input type="text"/> */}
             <select name="" id="">
-         
+          
             {/* <option value="others"></option> */}
             <option value="AC sleeper">AC sleeper</option>
             <option value="Non-AC sleeper">Non-AC sleeper</option>

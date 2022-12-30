@@ -23,7 +23,7 @@ const getBookings=async ()=>{
         dispatch(HideLoading());
         if(response.data.success){
             const mappedData=response.data.data.map((booking)=>{
-                //we needs to map the bus details alone
+                //i need to map the bus details alone
                 return{
                         ...booking,
                         ...booking.bus,
