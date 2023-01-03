@@ -4,6 +4,7 @@ import { useSelector,useDispatch} from 'react-redux'
 import { axiosInstance } from '../helpers/axiosInstance';
 import { HideLoading, ShowLoading } from '../redux/alertsSlice';
 import Bus from '../components/Bus';
+import axios from 'axios';
 
 function Home() {
   const dispatch=useDispatch();
@@ -22,7 +23,13 @@ const getBuses=async()=>{
   //because i should not send empty values
   try{
     dispatch(ShowLoading());
-    const response=await axiosInstance.post("/api/buses/get-all-buses", tempFilters);
+    const response=await axiosInstance.post("/api/buses/get-all-buses", tempFilters
+    // ,{
+    //   headers:{
+    //     Authorization:`Bearer ${localStorage.getItem("token")}`
+    //   }
+    // }
+    );
     dispatch(HideLoading());
     if(response.data.success){
       setBuses(response.data.data)
@@ -32,7 +39,8 @@ const getBuses=async()=>{
     }
   }
   catch(err){
-    console.log(err);
+    // console.log(err);
+// message.error("from home page catch..")
     dispatch(HideLoading());
     message.error(err.message);
   }

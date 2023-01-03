@@ -41,6 +41,7 @@ function ProtectedRoute({children}) {
             else{
                 dispatch(HideLoading());
                // setLoading(false);
+            //    message.error("from:protected route try block")
                 localStorage.removeItem("token");
                 message.error(response.data.message);
                 navigate("/login")
@@ -51,6 +52,7 @@ function ProtectedRoute({children}) {
             //if it is wrong token i have to taken it in local storage
             dispatch(HideLoading());
             localStorage.removeItem("token");
+            // message.error("from:protected route");
             message.error(err.message);
 
            // setLoading(false);

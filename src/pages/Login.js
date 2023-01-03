@@ -23,6 +23,8 @@ function Login() {
         localStorage.setItem("token",response.data.data)
         //if it is successful its navigate to the loginpage to home page
         navigate("/");
+        // window.location.reload();
+        // window.location.href="/";
       }
       else{
         message.error(response.data.message);
