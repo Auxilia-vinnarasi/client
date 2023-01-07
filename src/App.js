@@ -23,15 +23,18 @@ function App() {
       {loading && <Loader/>}
      <BrowserRouter>
       <Routes>
+     <Route path="/HomeNew" element={<PublicRoute><HomeNew/></PublicRoute>}></Route>
         <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>}/>
         {/* <Route path="/" element={<PublicRoute><Home/></PublicRoute>}/> */}
         <Route path="/book-now/:id" element={<ProtectedRoute><BookNow/></ProtectedRoute>}/>
         <Route path="/admin" element={<ProtectedRoute><Home/></ProtectedRoute>}/>
         <Route path="/admin/buses" element={<ProtectedRoute><AdminBuses/></ProtectedRoute>}/>
         <Route path="/admin/users" element={<ProtectedRoute><AdminUsers/></ProtectedRoute>}/>
+        <Route path="/admin/chart" element={<ProtectedRoute><BarChart/></ProtectedRoute>}/>
         <Route path="/register" element={<PublicRoute><Register/></PublicRoute>}/>
         <Route path="/login" element={<PublicRoute><Login/></PublicRoute>}/>
         <Route path="/bookings" element={<ProtectedRoute><Bookings/></ProtectedRoute>}/>
+         <Route path="/chart" element={<ProtectedRoute><BarChart/></ProtectedRoute>}/>
         <Route path="/admin/bookings" element={<ProtectedRoute><Bookings/></ProtectedRoute>}></Route>
         {/* <Route path="/profile" element={<ProtectedRoute><Profile/></ProtectedRoute>}></Route> */}
        
