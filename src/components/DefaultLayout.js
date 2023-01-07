@@ -22,6 +22,11 @@ function DefaultLayout({ children }) {
     icon:"ri-file-list-line",
     path:"/bookings",
   },
+     {
+    name:"Chart Details",
+    icon:"ri-bar-chart-line",
+    path:"/chart"
+  },
   // {
   //   name:"Profile",
   //   icon:"ri-file-list-line",
@@ -53,6 +58,11 @@ function DefaultLayout({ children }) {
       name: "Bookings",
       path: "/admin/bookings",
       icon: "ri-file-list-line",
+    },
+    {
+      name:"Chart Details",
+      path:"/admin/chart",
+      icon:"ri-bar-chart-line"
     },
     {
       name: "Logout",
