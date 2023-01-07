@@ -7,15 +7,18 @@ import {useNavigate } from 'react-router-dom'
 // import { setUser } from '../redux/usersSlice';
 // import {message} from "antd";
 
+import {HomeNew}from '../pages/HomeNew';
+
 //i will receive the pages ie (children) as props
 function PublicRoute({children}) {
   // const dispatch=useDispatch();
   // const [loading,setLoading]=useState(true);
 const navigate=useNavigate();
   useEffect(()=>{
-    if(localStorage.getItem("token")){
+    //if(localStorage.getItem("token")){
       //validateToken();
-    navigate("/");
+    //navigate("/");
+     navigate("/HomeNew");
 }
   },[])
 
