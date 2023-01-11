@@ -15,6 +15,12 @@ import BookNow from "./pages/BookNow";
 import Bookings from "./pages/Bookings";
 // import Profile from "./pages/Profile";
 
+import AdminBookings from "./pages/Admin/AdminBookings";
+
+import HomeNew from "./pages/HomeNew";
+import Chart from "./pages/Chart";
+import AdminChart from "./pages/Admin/AdminChart";
+
 function App() {
   //i want to get the loader from the reducer.whenever api req is coming i need spinner
   const {loading}=useSelector(state=>state.alerts);
@@ -30,12 +36,12 @@ function App() {
         <Route path="/admin" element={<ProtectedRoute><Home/></ProtectedRoute>}/>
         <Route path="/admin/buses" element={<ProtectedRoute><AdminBuses/></ProtectedRoute>}/>
         <Route path="/admin/users" element={<ProtectedRoute><AdminUsers/></ProtectedRoute>}/>
-        <Route path="/admin/chart" element={<ProtectedRoute><BarChart/></ProtectedRoute>}/>
+        <Route path="/admin/chart" element={<ProtectedRoute><AdminChart/></ProtectedRoute>}/>
         <Route path="/register" element={<PublicRoute><Register/></PublicRoute>}/>
         <Route path="/login" element={<PublicRoute><Login/></PublicRoute>}/>
         <Route path="/bookings" element={<ProtectedRoute><Bookings/></ProtectedRoute>}/>
-         <Route path="/chart" element={<ProtectedRoute><BarChart/></ProtectedRoute>}/>
-        <Route path="/admin/bookings" element={<ProtectedRoute><Bookings/></ProtectedRoute>}></Route>
+         <Route path="/chart" element={<ProtectedRoute><Chart/></ProtectedRoute>}/>
+        <Route path="/admin/bookings" element={<ProtectedRoute><AdminBookings/></ProtectedRoute>}></Route>
         {/* <Route path="/profile" element={<ProtectedRoute><Profile/></ProtectedRoute>}></Route> */}
        
       </Routes>
