@@ -6,7 +6,7 @@ export const axiosInstance=axios.create({
     //taking base url from the proxy..
     // baseURL:"http://localhost:5000/api",
    // baseURL:"https://tktbooking-backendd.onrender.com",
-    baseURL:"https://tktbook-backendd.onrender.com/",
+    baseURL:"https://tktbook-backendd.onrender.com",
     headers:{
         Authorization:`Bearer ${localStorage.getItem("token")}`
     }
